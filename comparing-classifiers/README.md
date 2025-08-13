@@ -17,12 +17,12 @@ This project compares the performance of several machine learning classifiers (K
 - Further improvements could be made by advanced SVM tuning, resampling, or feature engineering.
 
 ## Project Structure
-- `module17_starter/prompt_III.ipynb`: Main Jupyter Notebook with all code, results, and analysis.
+- `comparing-classifiers/prompt_III.ipynb`: Main Jupyter Notebook with all code, results, and analysis.
 - `README.md`: This file.
 
 ## How to Run
-1. Open `module17_starter/prompt_III.ipynb` in Jupyter or VS Code.
+1. Open `comparing-classifiers/prompt_III.ipynb` in Jupyter or VS Code.
 2. Follow the notebook cells for data loading, model training, evaluation, and analysis.
 
 ## Link to Notebook
-[Open the Jupyter Notebook](module17_starter/prompt_III.ipynb)
+[Open the Jupyter Notebook](prompt_III.ipynb)

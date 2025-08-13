@@ -16,6 +16,11 @@ This project compares the performance of several machine learning classifiers (K
 - Threshold tuning and class weighting improved recall for Logistic Regression, but at the cost of precision.
 - Further improvements could be made by advanced SVM tuning, resampling, or feature engineering.
 
+## Summary of improvements
+- Classification threshold was adjusted to increase recall, at the cost of precision. Best F1 score occurred at 0.15. Applying this improved recall to 31%, up from 2%.
+- Precision dropped from 51% to 22%, meaning most "yes" predictions are still wrong.
+- Further improvement for recall is possible, likely by adding class weights, or combining models.
+
 ## Project Structure
 - `comparing-classifiers/prompt_III.ipynb`: Main Jupyter Notebook with all code, results, and analysis.
 - `README.md`: This file.

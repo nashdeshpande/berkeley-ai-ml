@@ -24,9 +24,9 @@ TBD
 
 #### Outline of project
 
-- [Link to notebook 1]()
-- [Link to notebook 2]()
-- [Link to notebook 3]()
+- capstone-project/notebook.ipynb()
+- capstone-project/data/Electric_Vehicle_Population_Data.csv()
+- capstone-project/README.md()
 
 
 ##### Contact and Further Information

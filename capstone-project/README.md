@@ -23,11 +23,14 @@ Modeling TBD, but I expect that EV range, vehicle type (BEV vs PHEV), and model 
 TBD
 
 #### Outline of project
-
-- capstone-project/notebook.ipynb()
-- capstone-project/data/Electric_Vehicle_Population_Data.csv()
-- capstone-project/README.md()
-
+capstone-project/
+│
+├── data/
+│ └── Electric_Vehicle_Population_Data.csv
+|
+├── notebook.ipynb/
+|
+├── README.md
 
 ##### Contact and Further Information
 Nachiket Deshpande, nash.deshpande@gmail.com

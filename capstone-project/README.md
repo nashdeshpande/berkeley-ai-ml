@@ -1,39 +1,59 @@
-# Electric Vehicle Data Analysis for CAFV Eligibility
+### Bank Term Deposit Data Analysis for Subscription Prediction
 
-**Author:** Nachiket Deshpande 
+**Nachiket Deshpande**
 
 #### Executive summary
-This project analyzes the **Electric Vehicle Population dataset (2025)** to explore patterns in electric vehicle (EV) adoption across the U.S. and to build predictive models for **Clean Alternative Fuel Vehicle (CAFV) eligibility**. The study aims to provide insights into which EV attributes most strongly determine eligibility and to support policymakers, manufacturers, and consumers with data-driven findings.  
+This project analyzes a Portuguese bank’s marketing campaign dataset to predict whether a client will subscribe to a term deposit. By leveraging machine learning models, the goal is to identify the most important factors influencing subscription and to provide actionable insights for improving campaign effectiveness.
 
 #### Rationale
-CAFV eligibility determines access to high-occupancy vehicle (HOV) lanes, tax incentives, and other policy benefits that encourage EV adoption. By predicting eligibility, we can better understand which vehicle attributes are most critical for meeting regulatory standards, and provide insights to consumers and policymakers about the future EV market.
+Understanding the drivers of customer subscription decisions can help banks optimize their marketing strategies, reduce costs, and improve customer targeting. Predicting term deposit subscription is particularly valuable because it aligns customer needs with bank offerings while minimizing wasted outreach.
 
 #### Research Question
-Can we predict whether an electric vehicle (EV) qualifies for Clean Alternative Fuel Vehicle (CAFV) eligibility based on its attributes such as make, model year, electric range, and vehicle type (BEV vs PHEV)?
+Can we predict whether a client will subscribe to a term deposit based on attributes such as age, job, marital status, account balance, and details of the marketing campaign?
 
 #### Data Sources
-I will be using the Electric Vehicle Population dataset (2025) Links to an external site.from Kaggle, which contains over 170,000 EV registration records across the U.S.
-
-**Dataset**: [Electric Vehicle Population Dataset (2025) – Kaggle](https://www.kaggle.com/datasets/yanghu583/electric-vehicle-population-data-2025)  
-- **Size**: ~170,000 EV registration records  
-- **Fields include**: Make, Model, Model Year, EV Type (BEV/PHEV), Electric Range, CAFV Eligibility, Location (State, County, City), and Utility provider.  
-
+I will be using the **Bank Marketing Dataset** from Kaggle: [Bank Marketing Dataset (Full)](https://www.kaggle.com/datasets/sushant097/bank-marketing-dataset-full), which contains over **40,000 client records** collected during marketing campaigns conducted by a Portuguese banking institution.
 
 #### Methodology
-I plan to apply supervised machine learning classification techniques such as logistic regression, random forest, and gradient boosting. Data preprocessing will include handling missing values, encoding categorical features (make, model, type), and scaling numerical features (e.g., range, year). I will evaluate the models using accuracy, precision, recall, F1-score, and ROC-AUC.
+I plan to apply supervised machine learning classification techniques such as logistic regression, random forest, and gradient boosting.  
+Data preprocessing will include:  
+- Handling missing values  
+- Encoding categorical features (job, marital, education, etc.)  
+- Scaling numerical features (age, balance, campaign duration)  
+- Addressing class imbalance (resampling or class weights)
+
+Models will be evaluated using accuracy, precision, recall, F1-score, and ROC-AUC. Feature importance analysis will also be used to interpret results.
 
 #### Results
-Modeling TBD, but I expect that EV range, vehicle type (BEV vs PHEV), and model year will strongly influence CAFV eligibility predictions. A well-tuned ensemble model should provide reliable predictions with solid interpretability through feature importance analysis.
+Modeling is TBD, EDA results are as follows:
+- The dataset is imbalanced. A much smaller proportion of customers (12%) subscribed compared to those who did not (88%). This will require resampling or class-weight adjustments during modeling.
+- Students (34%) and retirees (24%) seem to subscribe the most. 
+- Customers with higher education (tertiary) seem to subscribe more than other levels of education (16%)
+- There is variation in numerical columns between subscribed and non-subscribed groups, so they may have predictive power.
+- There also appear to be differences in subscription rates across categories, suggesting it could be a useful predictor.
+- Subscription rates decline (from approx 18% to 5%) as the number of campaign contacts increases, consistent with customer fatigue. This is also seen in the correlation heatmap (-0.08 correlation between campaign and y)
+- Longer call durations are strongly associated with higher subscription likelihood — this may become a key driver in modeling. This shows up in the correlation heatmap with +0.52 between duration and y.
+- `Duration` shows the strongest correlation with the target variable. Other features like `pdays`, `balance` and `previous` also exhibit positive correlation.
+- Certain months show higher subscription rates (e.g March has the highest subscription rate, followed by Sep, Oct and Dec). This suggests seasonality in campaign effectiveness.
+- There is positive correlation (0.56) between pdays and previous, which suggests that clients who were contacted multiple times (previous high) were typically contacted more recently (pdays lower but positive). The more recent the previous contact (smaller pdays value), the more likely there were multiple previous contacts (previous value higher).
+
 
 #### Next steps
-- Complete preprocessing and modeling pipeline  
-- Run comparative experiments across classifiers  
-- Document insights in a final presentation/report 
+- Complete EDA with detailed visualizations and summary insights  
+- Train and evaluate baseline models (logistic regression, decision tree)  
+- Experiment with ensemble models (Random Forest, Gradient Boosting, XGBoost)  
+- Address imbalance through resampling or advanced techniques (SMOTE, stratification)  
+- Summarize key business insights and recommendations for campaign optimization
 
 #### Outline of project
-*   [README.md](https://github.com/nashdeshpande/berkeley-ai-ml/edit/main/capstone-project/README.md) : This file.
-*   [data/Electric_Vehicle_Population_Data.csv](https://github.com/nashdeshpande/berkeley-ai-ml/blob/main/capstone-project/data/Electric_Vehicle_Population_Data.csv) : (Input dataset)
-*   [notebook.ipynb](https://github.com/nashdeshpande/berkeley-ai-ml/blob/main/capstone-project/notebook.ipynb) : Contains the code for data analysis and visualizations. 
+capstone-project/
+│
+├── data/
+│ └── train.csv
+|
+├── notebook.ipynb/
+|
+├── README.md
 
 ##### Contact and Further Information
 Nachiket Deshpande, nash.deshpande@gmail.com

@@ -46,14 +46,12 @@ Modeling is TBD, EDA results are as follows:
 - Summarize key business insights and recommendations for campaign optimization
 
 #### Outline of project
+```text
 capstone-project/
-│
 ├── data/
-│ └── train.csv
-|
-├── notebook.ipynb/
-|
-├── README.md
+│   └── train.csv
+├── notebook.ipynb
+└── README.md
 
 ##### Contact and Further Information
 Nachiket Deshpande, nash.deshpande@gmail.com

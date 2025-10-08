@@ -26,16 +26,17 @@ Models will be evaluated using accuracy, precision, recall, F1-score, and ROC-AU
 
 #### Results
 Modeling is TBD, EDA results are as follows:
-- The dataset is imbalanced. A much smaller proportion of customers (12%) subscribed compared to those who did not (88%). This will require resampling or class-weight adjustments during modeling.
-- Students (34%) and retirees (24%) seem to subscribe the most. 
-- Customers with higher education (tertiary) seem to subscribe more than other levels of education (16%)
-- There is variation in numerical columns between subscribed and non-subscribed groups, so they may have predictive power.
-- There also appear to be differences in subscription rates across categories, suggesting it could be a useful predictor.
-- Subscription rates decline (from approx 18% to 5%) as the number of campaign contacts increases, consistent with customer fatigue. This is also seen in the correlation heatmap (-0.08 correlation between campaign and y)
-- Longer call durations are strongly associated with higher subscription likelihood — this may become a key driver in modeling. This shows up in the correlation heatmap with +0.52 between duration and y.
-- `Duration` shows the strongest correlation with the target variable. Other features like `pdays`, `balance` and `previous` also exhibit positive correlation.
-- Certain months show higher subscription rates (e.g March has the highest subscription rate, followed by Sep, Oct and Dec). This suggests seasonality in campaign effectiveness.
-- There is positive correlation (0.56) between pdays and previous, which suggests that clients who were contacted multiple times (previous high) were typically contacted more recently (pdays lower but positive). The more recent the previous contact (smaller pdays value), the more likely there were multiple previous contacts (previous value higher).
+- **Dataset structure**: The dataset contains 45,211 entries with 17 features. No missing values were found, and no duplicate rows were detected.  
+- **Class imbalance**: The dataset is imbalanced. A much smaller proportion of customers (12%) subscribed compared to those who did not (88%). This will require resampling or class-weight adjustments during modeling.
+**Outliers**: Some extreme values were observed in numerical features, particularly in `balance` (very high account balances), `pdays` (values up to 999 indicating no previous contact), and `campaign` (clients contacted dozens of times). These may need treatment or capping before modeling.
+- **Target variable relationships**: 
+- **Education and job**: Students (34%) and retirees (24%) seem to subscribe the most. Customers with higher education (tertiary) seem to subscribe more than other levels of education (16%).
+- **Numerical feature variation**: Features like `balance`, `duration`, and `previous` show distributional differences between subscribers and non-subscribers, indicating predictive potential. 
+- **Categorical feature variation**: Features such as `marital status`, `housing loan`, and `poutcome` also show differences in subscription rates, suggesting they could be useful predictors.
+- **Campaign fatigue**: Subscription rates decline (from approx 18% to 5%) as the number of campaign contacts increases, consistent with customer fatigue. This is also seen in the correlation heatmap (-0.08 correlation between campaign and y)
+- **Duration**: Longer call durations are strongly associated with higher subscription likelihood — this may become a key driver in modeling. This shows up in the correlation heatmap with +0.52 between duration and y.
+- **Seasonality**: Certain months show higher subscription rates (e.g March has the highest subscription rate, followed by Sep, Oct and Dec). This suggests seasonality in campaign effectiveness.
+- **Correlated features**: There is positive correlation (0.56) between pdays and previous, which suggests that clients who were contacted multiple times (previous high) were typically contacted more recently (pdays lower but positive). The more recent the previous contact (smaller pdays value), the more likely there were multiple previous contacts (previous value higher).
 
 
 #### Next steps
@@ -52,6 +53,6 @@ capstone-project/
 │   └── train.csv
 ├── notebook.ipynb
 └── README.md
-
+```
 ##### Contact and Further Information
 Nachiket Deshpande, nash.deshpande@gmail.com

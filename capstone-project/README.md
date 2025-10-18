@@ -101,7 +101,6 @@ capstone-project/
 ├── notebooks/
 │   └── 01_eda.ipynb
 │   └── 02_modeling.ipynb
-├── final_model.joblib  <-- Saved final model and threshold
 └── README.md
 ```
 ##### Contact and Further Information
